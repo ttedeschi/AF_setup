@@ -1,0 +1,1253 @@
+{
+  "meta": {
+    "version": "1",
+    "type": "dashboard",
+    "name": "LNL Tier2 Monitoring -Template",
+    "description": "template created from dashboard: LNL Tier2 Monitoring "
+  },
+  "content": {
+    "data": {
+      "type": "dashboard",
+      "attributes": {
+        "name": "LNL Tier2 Monitoring ",
+        "description": "Dashboard to monitor CPU, Memory and Network of LNL nodes"
+      },
+      "relationships": {
+        "label": {
+          "data": []
+        },
+        "cell": {
+          "data": [
+            {
+              "type": "cell",
+              "id": "0be1b5883bb22000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b5884c722000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58865f22000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b5886b722000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58873f22000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b5887a322000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58880722000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58888b22000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58891322000"
+            },
+            {
+              "type": "cell",
+              "id": "0be1b58899722000"
+            }
+          ]
+        },
+        "variable": {
+          "data": []
+        }
+      }
+    },
+    "included": [
+      {
+        "id": "0be1b5883bb22000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 17,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b5883bb22000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b5884c722000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 9,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b5884c722000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58865f22000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 11,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58865f22000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b5886b722000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 2,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b5886b722000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58873f22000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 19,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58873f22000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b5887a322000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 0,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b5887a322000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58880722000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 13,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58880722000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58888b22000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 6,
+          "w": 6,
+          "h": 3
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58888b22000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58891322000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 4,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58891322000"
+            }
+          }
+        }
+      },
+      {
+        "id": "0be1b58899722000",
+        "type": "cell",
+        "attributes": {
+          "x": 0,
+          "y": 15,
+          "w": 6,
+          "h": 2
+        },
+        "relationships": {
+          "view": {
+            "data": {
+              "type": "view",
+              "id": "0be1b58899722000"
+            }
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b5883bb22000",
+        "attributes": {
+          "name": "Memory usage",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"mem\")\n  |> filter(fn: (r) => r[\"_field\"] == \"used\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b5884c722000",
+        "attributes": {
+          "name": "CPU IO wait",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"cpu\")\n  |> filter(fn: (r) => r[\"_field\"] == \"usage_iowait\")\n  |> filter(fn: (r) => r[\"cpu\"] == \"cpu-total\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58865f22000",
+        "attributes": {
+          "name": "Network read cumulative sum",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"net\")\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes_recv\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> filter(fn: (r) => r[\"interface\"] == \"em2\")\n  |> increase()\n  |> yield(name: \"increase\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b5886b722000",
+        "attributes": {
+          "name": "CPU Usage System",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"cpu\")\n  |> filter(fn: (r) => r[\"_field\"] == \"usage_system\")\n  |> filter(fn: (r) => r[\"cpu\"] == \"cpu-total\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58873f22000",
+        "attributes": {
+          "name": "Average per node memory usage - averaged across all nodes",
+          "properties": {
+            "shape": "chronograf-v2",
+            "type": "single-stat",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"mem\")\n  |> filter(fn: (r) => r[\"_field\"] == \"used\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> group(columns: [\"host\"])\n  |> mean()\n  |> group()\n  |> mean()\n  |> yield()",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "prefix": "",
+            "tickPrefix": "",
+            "suffix": "",
+            "tickSuffix": "",
+            "colors": [
+              {
+                "id": "base",
+                "type": "text",
+                "hex": "#00C9FF",
+                "name": "laser",
+                "value": 0
+              }
+            ],
+            "decimalPlaces": {
+              "isEnforced": true,
+              "digits": 2
+            },
+            "note": "",
+            "showNoteWhenEmpty": false
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b5887a322000",
+        "attributes": {
+          "name": "IO operations in progress",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"diskio\")\n  |> filter(fn: (r) => r[\"_field\"] == \"iops_in_progress\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "",
+                "scale": "linear"
+              }
+            },
+            "type": "band",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "582e82c5-bc0a-41ee-bf05-ea447620d92f",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "51991e71-cc10-4b8d-9b78-d1d8034e0112",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "3eec2a5c-0ce3-4402-ac7d-3f448537f486",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "upperColumn": "",
+            "mainColumn": "mean",
+            "lowerColumn": "",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58880722000",
+        "attributes": {
+          "name": "Network read cumulative sum - summed across all nodes",
+          "properties": {
+            "shape": "chronograf-v2",
+            "type": "single-stat",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"net\")\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes_recv\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> filter(fn: (r) => r[\"interface\"] == \"em2\")\n  |> increase()\n  |> group(columns: [\"_time\"])\n  |> sum()\n  |> yield()",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "prefix": "",
+            "tickPrefix": "",
+            "suffix": "",
+            "tickSuffix": "",
+            "colors": [
+              {
+                "id": "base",
+                "type": "text",
+                "hex": "#00C9FF",
+                "name": "laser",
+                "value": 0
+              }
+            ],
+            "decimalPlaces": {
+              "isEnforced": true,
+              "digits": 2
+            },
+            "note": "",
+            "showNoteWhenEmpty": false
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58888b22000",
+        "attributes": {
+          "name": "CPU Usage System + User",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"cpu\")\n  |> filter(fn: (r) => r[\"_field\"] == \"usage_system\" or r[\"_field\"] == \"usage_user\")\n  |> filter(fn: (r) => r[\"cpu\"] == \"cpu-total\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> group(columns: [\"_time\", \"host\"])\n  |> sum()\n  |> group(columns: [\"host\"])\n  |> yield()",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58891322000",
+        "attributes": {
+          "name": "CPU usage user",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"cpu\")\n  |> filter(fn: (r) => r[\"_field\"] == \"usage_user\")\n  |> filter(fn: (r) => r[\"cpu\"] == \"cpu-total\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "d5b5c419-39b4-4e48-b357-ea3957fb0818",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "c75273cd-c2f9-4f00-a9b3-9c420f31332d",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "1ea42564-fac3-4701-897d-c0ef489f7e11",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      },
+      {
+        "type": "view",
+        "id": "0be1b58899722000",
+        "attributes": {
+          "name": "Network read throughput (first derivative)",
+          "properties": {
+            "shape": "chronograf-v2",
+            "queries": [
+              {
+                "text": "from(bucket: \"site-metrics\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"net\")\n  |> filter(fn: (r) => r[\"_field\"] == \"bytes_recv\")\n  |> filter(fn: (r) => r[\"host\"] == \"wl-17-01.lnl.infn.it\")\n  |> filter(fn: (r) => r[\"interface\"] == \"em2\")\n  |> derivative(unit: 1s, nonNegative: false)\n  |> yield(name: \"derivative\")",
+                "editMode": "advanced",
+                "name": "",
+                "builderConfig": {
+                  "buckets": [],
+                  "tags": [
+                    {
+                      "key": "_measurement",
+                      "values": [],
+                      "aggregateFunctionType": "filter"
+                    }
+                  ],
+                  "functions": [
+                    {
+                      "name": "mean"
+                    }
+                  ],
+                  "aggregateWindow": {
+                    "period": "auto",
+                    "fillValues": false
+                  }
+                }
+              }
+            ],
+            "axes": {
+              "x": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              },
+              "y": {
+                "bounds": [
+                  "",
+                  ""
+                ],
+                "label": "",
+                "prefix": "",
+                "suffix": "",
+                "base": "10",
+                "scale": "linear"
+              }
+            },
+            "type": "xy",
+            "staticLegend": {
+              "colorizeRows": true,
+              "opacity": 1,
+              "orientationThreshold": 100000000,
+              "widthRatio": 1
+            },
+            "geom": "line",
+            "colors": [
+              {
+                "id": "cdfb9381-abec-437d-9499-669a8b496c55",
+                "type": "scale",
+                "hex": "#31C0F6",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "7740f1bb-cbc2-4c37-913d-c2fabe7c84ec",
+                "type": "scale",
+                "hex": "#A500A5",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              },
+              {
+                "id": "4e537d42-8a22-4632-8847-10e91092aa25",
+                "type": "scale",
+                "hex": "#FF7E27",
+                "name": "Nineteen Eighty Four",
+                "value": 0
+              }
+            ],
+            "note": "",
+            "showNoteWhenEmpty": false,
+            "xColumn": "_time",
+            "generateXAxisTicks": [],
+            "xTotalTicks": 0,
+            "xTickStart": 0,
+            "xTickStep": 0,
+            "yColumn": "_value",
+            "generateYAxisTicks": [],
+            "yTotalTicks": 0,
+            "yTickStart": 0,
+            "yTickStep": 0,
+            "shadeBelow": false,
+            "position": "overlaid",
+            "timeFormat": "",
+            "hoverDimension": "auto",
+            "legendColorizeRows": true,
+            "legendHide": false,
+            "legendOpacity": 1,
+            "legendOrientationThreshold": 100000000
+          }
+        }
+      }
+    ]
+  },
+  "labels": []
+}
