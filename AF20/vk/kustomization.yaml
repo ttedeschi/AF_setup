@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./deployment-lnl.yaml
+  - ./deployment-ba.yaml
+  - ./service-account.yaml
+
+configMapGenerator:
+  - name: vk-lnl-new-cfg 
+    files:
+      - vk-cfg.json=vk-cfg.json
+  - name: vk-lnl-new-config 
+    files:
+      - InterLinkConfig-lnl.yaml=InterLinkConfig-lnl.yaml
+      - kubeconfig=kubeconfig 
+  - name: vk-ba-new-cfg 
+    files:
+      - vk-cfg.json=vk-cfg.json
+  - name: vk-ba-new-config 
+    files:
+      - InterLinkConfig-ba.yaml=InterLinkConfig-ba.yaml
+      - kubeconfig=kubeconfig 

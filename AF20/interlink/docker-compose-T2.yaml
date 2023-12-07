@@ -1,0 +1,86 @@
+version: '3.7'
+services:
+  interlink-ba:
+    #build:
+    #  context: ./
+    #  dockerfile: docker/Dockerfile.interlink
+    image: "ttedesch/interlink:test"
+    restart: always
+    network_mode: "host"
+    volumes:
+    - type: bind
+      source: ./
+      target: /etc/interlink
+    - type: bind
+      source: ../vk
+      target: /configs
+    environment:
+    - INTERLINKCONFIGPATH=/configs/InterLinkConfig-ba.yaml
+    - KUBECONFIG=/configs/kubeconfig
+  docker-sidecar-ba:
+    #build:
+    #  context: ../../../
+    #  dockerfile: docker/htcondor/Dockerfile
+    image: "ttedesch/interlink-sidecar-htcondor:test"
+    command: /bin/sh -c "python3 handles.py --condor-config /utils/condor_config --schedd-host ce-01.recas.ba.infn.it --collector-host ce-01.recas.ba.infn.it:9619 --auth-method GSI --debug D_FULLDEBUG,D_SECURITY --proxy /utils/proxy/proxy --port 8003" 
+    #command : sleep infinity
+    restart: always
+    privileged: true
+    cap_add:
+    - SYS_ADMIN
+    network_mode: "host"
+    volumes:
+    - type: bind
+      source: ./condor-setup
+      target: /utils/condor-setup
+    - type: bind
+      source: ./proxy/
+      target: /utils/proxy
+    - type: bind
+      source: ../vk
+      target: /configs
+    - type: bind
+      source: /cvmfs/grid.cern.ch/etc/grid-security/certificates
+      target: /etc/grid-security/certificates
+  interlink-lnl:
+    #build:
+    #  context: ./
+    #  dockerfile: docker/Dockerfile.interlink 
+    image: "ttedesch/interlink:test"
+    restart: always
+    network_mode: "host"
+    volumes:
+    - type: bind
+      source: ./
+      target: /etc/interlink
+    - type: bind
+      source: ../vk
+      target: /configs
+    environment:
+    - INTERLINKCONFIGPATH=/configs/InterLinkConfig-lnl.yaml
+    - KUBECONFIG=/configs/kubeconfig
+  docker-sidecar-lnl:
+    #build:
+    #  context: ./
+    #  dockerfile: docker/htcondor/Dockerfile
+    image: "ttedesch/interlink-sidecar-htcondor:test"
+    command: /bin/sh -c "python3 handles.py --condor-config /utils/condor_config --schedd-host t2-cce-02.lnl.infn.it --collector-host t2-cce-02.lnl.infn.it:9619 --auth-method GSI --debug D_FULLDEBUG,D_SECURITY --proxy /utils/proxy/proxy"
+    #command : sleep infinity
+    restart: always
+    privileged: true
+    cap_add:
+    - SYS_ADMIN
+    network_mode: "host"
+    volumes:
+    - type: bind
+      source: ./condor-setup
+      target: /utils/condor-setup
+    - type: bind
+      source: ./proxy
+      target: /utils/proxy
+    - type: bind
+      source: ../vk
+      target: /configs
+    - type: bind
+      source: /cvmfs/grid.cern.ch/etc/grid-security/certificates
+      target: /etc/grid-security/certificates

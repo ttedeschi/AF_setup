@@ -1,0 +1,12 @@
+{
+    "vk-lnl-new": {
+        "cpu": "128", 
+        "memory": "800Gi",
+        "pods": "1000"
+  },
+    "vk-ba-new": {
+        "cpu": "128", 
+        "memory": "800Gi",
+        "pods": "1000"
+  }
+}

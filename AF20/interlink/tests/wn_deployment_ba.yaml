@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: production-ba-deployment
+spec:
+  replicas: 16
+  selector:
+    matchLabels:
+      app: production-ba
+  template:
+    metadata:
+      labels:
+        app: production-ba
+    spec:
+      containers:
+      - image: host
+        command: ["/bin/bash"]
+        args: ["-c", 'echo "iniziamo ora " `date`; wget --no-check-certificate https://cmsdoc.cern.ch/~spiga/condor-10.1.0-1-x86_64_CentOS7-stripped.tgz .; tar -zxvf condor-10.1.0-1-x86_64_CentOS7-stripped.tgz; cd condor-10.1.0-1-x86_64_CentOS7-stripped/; echo "STARTD_NAME = $RANDOM" >> etc/condor/condor_config; sed -i "s/9617/$(shuf -i 8000-9617 -n 1)/" etc/condor/condor_config.local; ./setupwn.sh T2_BA_Af20; sleep 18000; ps -auxf; echo "========"; echo "========"; cat var/log/condor/MasterLog; echo "========"; echo "========"; cat var/log/condor/StartLog; echo "========"; echo "========"; cat var/log/condor/SharedPortLog']
+        resources:
+          requests:
+            memory: "16000000000"
+            cpu: "8"
+            #memory: "64000000000"
+            #cpu: "32"
+        imagePullPolicy: Always
+        name: production-lnl
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/hostname: vk-ba-new
+      tolerations:
+      - key: virtual-node.interlink/no-schedule
+        operator: Exists
+      - key: virtual-kubelet.io/provider
+        operator: Exists
