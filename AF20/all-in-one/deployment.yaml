@@ -1,0 +1,146 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vk-ba-new
+  labels:
+    nodeName: vk-ba-new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      nodeName: vk-ba-new
+  template:
+    metadata:
+      labels:
+        nodeName: vk-ba-new
+    spec:
+      containers:
+      - name: jaeger
+        image: jaegertracing/all-in-one:1.51
+      - name: inttw-vk
+        image: ghcr.io/intertwin-eu/virtual-kubelet-inttw:0.1.0 
+        imagePullPolicy: Always
+        env:
+        - name: NODENAME
+          value: vk-ba-new
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: KUBECONFIG
+          value: "/etc/interlink/kubeconfig"
+        - name: KUBELET_PORT
+          value: "10255"
+        - name: INTERLINKCONFIGPATH
+          value: "/etc/interlink/InterLinkConfig-ba.yaml"
+        - name: VKTOKENFILE
+          value: "/opt/interlink/token"
+        - name: CONFIGPATH
+          value: "/etc/interlink/vk-cfg.json"
+        volumeMounts:
+        - name: config
+          mountPath: /etc/interlink/InterLinkConfig-ba.yaml
+          subPath: InterLinkConfig-ba.yaml
+        - name: config-json
+          mountPath: /etc/interlink/vk-cfg.json
+          subPath: vk-cfg.json
+        - name: config
+          mountPath: /etc/interlink/kubeconfig
+          subPath: kubeconfig
+        - name: token
+          mountPath: /opt/interlink
+        resources:
+          limits:
+            cpu: 500m
+            memory: 600Mi
+          requests:
+            cpu: 50m
+            memory: 100Mi
+      - name: refresh-token
+        image: ghcr.io/intertwin-eu/virtual-kubelet-inttw-refresh:0.1.0
+        imagePullPolicy: Always
+        env:
+        - name: IAM_SERVER
+          value: "https://dodas-iam.cloud.cnaf.infn.it/"
+        - name: IAM_CLIENT_ID
+          value: "DUMMY"
+        - name: IAM_CLIENT_SECRET
+          value: "DUMMY"
+        - name: IAM_REFRESH_TOKEN
+          value: "DUMMY"
+        - name: IAM_VK_AUD
+          value: intertw-vk
+        - name: TOKEN_PATH
+          value: /opt/interlink/token
+        resources:
+          limits:
+            cpu: 500m
+            memory: 600Mi
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+        - name: token
+          mountPath: /opt/interlink
+      - name: interlink
+        image: ttedesch/interlink:0.1.0
+        imagePullPolicy: Always
+        env:
+        - name: INTERLINKCONFIGPATH
+          value: "/configs/InterLinkConfig-ba.yaml"
+        - name: KUBECONFIG
+          value: "/configs/kubeconfig"
+        volumeMounts:
+        - name: config
+          mountPath: /configs/InterLinkConfig-ba.yaml
+          subPath: InterLinkConfig-ba.yaml
+      - name: sidecar
+        image: ttedesch/interlink-sidecar-htcondor:test
+        command: ["/bin/sh"]
+        args: ["-c", "python3 handles.py --condor-config /utils/condor_config --schedd-host ce-01.recas.ba.infn.it --collector-host ce-01.recas.ba.infn.it:9619 --auth-method GSI --debug D_FULLDEBUG,D_SECURITY --proxy /utils/proxy/proxy --port 8003"]
+        volumeMounts:
+        - name: proxy
+          mountPath: /utils/proxy
+        - name: cvmfs
+          mountPath: /etc/grid-security/certificates
+          subPath: grid.cern.ch/etc/grid-security/certificates
+      - name: refresh-proxy
+        image: cmsopendata/cmssw_5_3_20-slc6_amd64_gcc472
+        imagePullPolicy: Always
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do sudo voms-proxy-init --rfc --voms cms -valid 192:00 --cert /home/tls-voms/usercert.pem --key /home/tls-voms/userkey.pem --out /home/proxy/proxy; sleep $((48 * 60 * 60)); done"]
+        resources:
+          limits:
+            cpu: 500m
+            memory: 600Mi
+          requests:
+            cpu: 50m
+            memory: 100Mi
+        volumeMounts:
+        - name: proxy
+          mountPath: /home/proxy
+        - name: tls-voms-secret-volume
+          mountPath: "/home/tls-voms/"
+
+      serviceAccountName: interlink
+      volumes:
+      - name: config
+        configMap:
+          name: vk-ba-new-config
+      - name: config-json
+        configMap:
+          name: vk-ba-new-cfg
+      - name: token
+        emptyDir: {}
+      - name: proxy
+        emptyDir: {}
+      - name: tls-voms-secret-volume
+        secret:
+          secretName: tls-voms-secret
+          defaultMode: 0600
+      - name: cvmfs
+        hostPath:
+          path: /cvmfs-af-htcondor
+          type: Directory
